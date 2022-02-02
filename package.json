@@ -1,0 +1,25 @@
+{
+  "name": "redux-react-matching-memory",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"build": "webpack --env prod=matching_memory"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core":"^7.16.10",
+    "@babel/preset-react": "^7.16.7",
+    "webpack": ">=2"
+   
+  },
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-redux": "^7.2.6"
+    
+  }
+}
