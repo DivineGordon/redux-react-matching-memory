@@ -1,6 +1,6 @@
 # Matching Memory (Redux & React)
 
-**Find live site here =>  [Matching Memory](https://realgordon.github.io/redux-react-matching-memory/)**
+**Find live site here =>  [Matching Memory](https://divinegordon.github.io/redux-react-matching-memory/)**
 
 This project explores where react-redux fits into an application.
 
