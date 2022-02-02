@@ -1,11 +1,12 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { CardRow } from './cardRow/CardRow.js';
-// Add import statements below
+import { Alert } from '../alert/Alert.js';
 import {useSelector} from 'react-redux';
 import {selectBoard} from './boardSlice.js'
-
-export const Board = () => {
-  // Add selected data variable and implement below
+const container=document.getElementById("message");
+export const Board = ({tries,gameOver}) => {
+  
   const currentBoard=useSelector(selectBoard);
 
   const numberOfCards = currentBoard.length;
@@ -28,9 +29,13 @@ export const Board = () => {
     content.push(
       <CardRow 
         key={row} 
-        cards={rowCards} 
+        cards={rowCards}
+      
       />
     );
   }
-  return <div className="cards-container">{content}</div>;
+  const alert=ReactDOM.createPortal(
+  <Alert gameOver={gameOver} key={2} tries={tries} />,container);
+  return [<div key={1} style={{textAlign:"center"}}><div  className="cards-container">{content}</div></div>,
+alert];
 };

@@ -1,15 +1,18 @@
 import React from 'react';
 import {useDispatch,useSelector} from 'react-redux';
 import {selectVisibleIDs,flipCard,selectMatchedIDs} from '../../boardSlice.js'
-
-let cardLogo = "https://static-assets.codecademy.com/Courses/Learn-Redux/matching-game/codecademy_logo.png";
+const logos=['react.svg','girl_and_motar.jpg'];
+const cardLogo=()=>{
+  return "images/"+logos[Math.floor(Math.random()*2)]
+};
+//let cardLogo = "https://static-assets.codecademy.com/Courses/Learn-Redux/matching-game/codecademy_logo.png";
 
 export const Card = ({ id, contents }) => {
 
    const dispatch=useDispatch();
   const visibleIDs=useSelector(selectVisibleIDs);
   const matchedIDs=useSelector(selectMatchedIDs);
-  let noMatch="";
+  
   
   // flip card action
   const flipHandler = (id) => {
@@ -18,10 +21,15 @@ export const Card = ({ id, contents }) => {
   };
 
   let cardStyle = 'resting'
-  let click = () => flipHandler(id);
+  let click = () =>{ 
+
+    flipHandler(id)
+   
+  };
   
   let cardText = (
-    <img src={cardLogo} className="logo-placeholder" alt="Card option" />
+    <img src={cardLogo()} className="logo-placeholder"  
+    alt="Card option" />
   );
 
   
@@ -32,18 +40,23 @@ export const Card = ({ id, contents }) => {
   }
 
   
-  if (matchedIDs.some(cid=>id===cid)||visibleIDs.some(cid=>id===cid)) {
+  if (matchedIDs.some(cid=>id===cid) && visibleIDs.some(cid=>id===cid)) {
+   if( matchedIDs.every(m=>visibleIDs.some(v=>m===v))){
     cardStyle = 'matched';
+   }
   }
 
   
-  if (visibleIDs.length===2) {
+  else if (visibleIDs.length===2) {
     click = () => {};
-   noMatch= matchedIDs.length!==2?'no-match':"";
+    if(visibleIDs.some(cid=>id===cid)){
+   cardStyle= 'no-match';
+  }
+  
   }
 
   return (
-    <button onClick={click} className={`card ${cardStyle} ${noMatch}`}>
+    <button onClick={click} className={`card ${cardStyle}`}>
       {cardText}
     </button>
   );

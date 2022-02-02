@@ -50,6 +50,15 @@ const initialState = [
   }
   
   const wordPairs = [
+    'kente', 'kente', 
+    'Sarkodie', 'Sarkodie', 
+    'Black Star', 'Black Star', 
+    'Heaven', 'Heaven',
+    'Sankofa', 'Sankofa',
+    'react-redux', 'react-redux',
+  ]
+  /*
+  const wordPairs = [
     'Provider', 'Provider', 
     'selector', 'selector', 
     'useSelector()', 'useSelector()', 
@@ -57,6 +66,7 @@ const initialState = [
     'Pure Function', 'Pure Function',
     'react-redux', 'react-redux',
   ]
+  */
   
   const randomWords = () => {
     let words = []
@@ -101,6 +111,6 @@ const initialState = [
   const selectMatchedIDs=(state)=>{
     return state.board.filter(c=>c.matched).map(({id})=>id)
   }
-  // Add selector export statments below
+  
   export {selectBoard,selectVisibleIDs,selectMatchedIDs};
   

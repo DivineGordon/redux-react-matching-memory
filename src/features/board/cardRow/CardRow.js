@@ -6,7 +6,8 @@ export const CardRow = ({ cards }) => {
     <Card 
       key={card.id} 
       id={card.id} 
-      contents={card.contents} 
+      contents={card.contents}
+     
   />)
 
   return <>{content}</>;

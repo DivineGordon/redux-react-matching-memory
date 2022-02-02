@@ -6,12 +6,22 @@
     <meta name="theme-color" content="#000000" />
     <link rel="stylesheet" href="./index.css" />
     <title>React & Redux App</title>
+    <script >
+      var images=["react.svg","girl_and_motar.jpg"].map(function(p){
+        var image=new Image();
+        image.src="images/"+p;
+        return image
+        })
+    </script>
+    <script defer src="./dist/app.bundle.js"></script>
+    
   </head>
   <body>
       <h1>React & Redux App</h1>
-      <h2>Designed by: Github- @DivineGordon</h2>
+      <h2>Designed by: <a href="" target="_blank">Github- @DivineGordon</a></h2>
+      <div id="message" style="position: fixed;top:10%;right:0%;width: 100px;height: 50px;"></div>
     <div id="root"></div>
-    <script src="https://content.codecademy.com/courses/React/react-16-full.min.js"></script>
-    <script src="./output/index.compiled.js"></script>
+  <!--  <script src="https://content.codecademy.com/courses/React/react-16-full.min.js"></script>
+    <script src="./output/index.compiled.js"></script>-->
   </body>
 </html>

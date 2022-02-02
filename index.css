@@ -11,7 +11,7 @@ body {
 }
 
 .card {
-  padding: 20px 0;
+  padding: 0;
   text-align: center;
   border-radius: 6px;
   border: solid 1px #141c3a;
@@ -32,9 +32,10 @@ body {
   grid-template-columns: repeat(3, 138px);
   grid-auto-rows: 1fr;
   gap: 16px 16px;
-  margin: 0 auto;
+  margin: auto;
   width: fit-content;
   padding: 24px 0 33px 0;
+  text-align: center;
 }
 
 .card.selected {
@@ -48,11 +49,12 @@ body {
 }
 
 .card.no-match {
-  color: #fd4d3f;
+  color: #e6291f;
 }
 
 .logo-placeholder {
   width: 120px;
+  height: 60px;
 }
 
 .score-container {
@@ -87,4 +89,7 @@ body {
 .try-new-pair-button:hover,
 .try-new-pair-button:focus {
   background-color: #7d1aff;
+}
+.App{
+  text-align: center;
 }
